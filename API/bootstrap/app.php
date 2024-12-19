@@ -81,10 +81,13 @@ $app->configure('jwt');
 // ]);
 
 $app->routeMiddleware([
-    'auth:api' => App\Http\Middleware\Authenticate::class,
+    'api' => App\Http\Middleware\Authenticate::class,
 
 ]);
 
+$app->routeMiddleware([
+    'auth' => App\Http\Middleware\Authenticate::class,
+]);
 
 
 /*
