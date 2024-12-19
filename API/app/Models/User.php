@@ -15,28 +15,18 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 
     public function getJWTIdentifier()
     {
-        return $this->getKey();
+        return $this->getKey();  // Returns the user's primary key (ID)
     }
 
     public function getJWTCustomClaims()
     {
-        return [];
+        return [];  // Custom claims for JWT if needed
     }
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var string[]
-     */
     protected $fillable = [
         'name', 'email',
     ];
 
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var string[]
-     */
     protected $hidden = [
         'password',
     ];

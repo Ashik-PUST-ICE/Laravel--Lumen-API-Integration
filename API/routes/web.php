@@ -2,7 +2,13 @@
 
 
 
-$router->get('/details','DetailsController@detailSelect');
+// $router->get('/details','DetailsController@detailSelect');
+
+
+$router->get('/details', [
+    'middleware' => 'auth',
+    'uses' => 'DetailsController@detailSelect'
+]);
 
 $router->post('/details','DetailsController@detailCreate');
 
